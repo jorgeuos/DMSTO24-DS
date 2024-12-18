@@ -67,25 +67,26 @@ print("Men jag vill ju fortsätta")
 
 print("Nu är vi klara.")
 
-"""
-Work in progress
 def delaMedFunction(tal):
     try:
+        tal = int(tal)
         print(f"10 / {tal}")
         x = 10 / tal
         print(f"10 / {tal} = {x}")
-    except ZeroDivisionError:
-        print("Du kan inte dela med 0.")
-        # Kör någon annan kod här
-        # Hantera felet
-        return  False
-    except:
-        print("Vi fick ett fel.")
+    # except ZeroDivisionError:
+    #     print("Du kan inte dela med 0.")
+    #     return False
+    # except ValueError:
+    #     print("Fel: Du måste skriva in ett numeriskt värde.")
+    #     return False
+    except Exception as e:
+        print(f"Vi fick ett fel: {e}")
     finally:
         print("Försök igen.")
         z = input("Skriv in ett tal att dela med: ")
+        if z == "exit" or z == "x":
+            return False
         delaMedFunction(z)
 
 q = input("Skriv in ett tal att dela med: ")
 delaMedFunction(q)
-"""
