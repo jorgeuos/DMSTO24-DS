@@ -58,7 +58,34 @@ except ZeroDivisionError:
 finally:
    print("Programmet fortsätter.")
 
-x = 10 / 0
+# Bör ge syntaxfel
+# x = 10 / 0
 
 # Kommer inte att nå hit ner
 print("Men jag vill ju fortsätta")
+
+
+print("Nu är vi klara.")
+
+"""
+Work in progress
+def delaMedFunction(tal):
+    try:
+        print(f"10 / {tal}")
+        x = 10 / tal
+        print(f"10 / {tal} = {x}")
+    except ZeroDivisionError:
+        print("Du kan inte dela med 0.")
+        # Kör någon annan kod här
+        # Hantera felet
+        return  False
+    except:
+        print("Vi fick ett fel.")
+    finally:
+        print("Försök igen.")
+        z = input("Skriv in ett tal att dela med: ")
+        delaMedFunction(z)
+
+q = input("Skriv in ett tal att dela med: ")
+delaMedFunction(q)
+"""
