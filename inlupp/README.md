@@ -1,5 +1,21 @@
 # Instruktioner för inlämningsuppgift 1
 
+## Inlämning
+
+Inlämningen sker genom att du pushar dina ändringar till ditt repository på GitHub. Du ska alltså inte skicka in något via Teams eller mail förutom länken till ditt repo i Learnpoint. Se till att du har pushat alla dina ändringar innan deadline.
+
+```bash
+git add -A
+git commit -m "Din commit message här"
+git pull origin main
+# eller master beroende på vilken branch du jobbar på
+git push origin main
+```
+
+Jag har förberett med automatiska tester för varje uppgift. Dessa tester kommer att kontrollera att din lösning är korrekt. Om testerna inte passerar kommer du att få ett felmeddelande som säger att testerna har misslyckats. Du kan köra testerna genom att använda kommandot `pytest` i terminalen.
+
+## Pytest
+
 För att kunna testa lösningarna på dina uppgifter behöver du först installera `pytest`. Det gör du genom att köra kommandot:
 
 ```bash
