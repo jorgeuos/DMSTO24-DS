@@ -30,6 +30,7 @@ jobs:
           pip install pytest
 
       # Steg 4: Kör tester
-      - name: Run tests
+      - name: Run tests in inlupp/exempel
         run: |
+          cd inlupp/exempel
           pytest

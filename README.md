@@ -9,5 +9,7 @@ Instruktioner hittar du i mappen `inlupp`.
 [Instruktioner för inlämningsuppgifter](inlupp/README.md)
 
 
+## Git instruktioner
 
+Se [Git-intro](git-intro.md) för att komma igång med Git.
 
