@@ -27,6 +27,13 @@ Alternativt kan du använda `pip3`:
 ```bash
 pip3 install pytest
 ```
+### Om `pytest` inte fungerar
+
+Testa köra:
+
+```bash
+python -m pytest test_exempel_1.py
+```
 
 ## Lösa uppgifter
 
