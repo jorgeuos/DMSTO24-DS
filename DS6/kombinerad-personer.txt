@@ -1,0 +1,4 @@
+Name, Age, City
+Anna, 25, Stockholm
+Björn, 30, Göteborg
+Maria, 27, Stockholm
