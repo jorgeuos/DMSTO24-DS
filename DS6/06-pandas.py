@@ -5,6 +5,11 @@ import pandas as pd
 $ pip install pandas
 """
 
+# print(pd.__version__)
+
+# Hemläxa Jorge: Dokumentera med kommentarer!!!
+
+
 data = {
    "Name": ["Anna", "Björn", "Cecilia"],
    "Age": [25, 30, 27],
