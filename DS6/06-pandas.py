@@ -20,3 +20,5 @@ df = pd.DataFrame(data)
 
 print(df)
 
+df = df.sort_values(by="Age", ascending=False)
+
