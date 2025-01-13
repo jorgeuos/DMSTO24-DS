@@ -1,0 +1,8 @@
+Date,Product,Price,Quantity
+2023-01-01,Apples,10,50
+2023-01-01,Bananas,5,70
+2023-01-02,Oranges,8,100
+2023-01-02,Apples,10,75
+2023-01-03,Bananas,5,40
+2023-01-03,Apples,10,30
+2023-01-03,Oranges,,30
