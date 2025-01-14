@@ -7,8 +7,8 @@ pip install matplotlib
 """
 
 
-# Läs filen sales-2.csv
-df = pd.read_csv("sales-2.csv")
+# Läs filen sales.csv
+df = pd.read_csv("sales.csv")
 print(df)
 
 # Summera på price
@@ -42,55 +42,8 @@ print(data_with_cat)
 # Beräkna sales
 data_with_cat["Sales"] = data_with_cat["Price"] * data_with_cat["Quantity"]
 
-
-
-
-# Testa o rita en enkel graf:
-# x = [1,2,3]
-# y = [4,5,6]
-# plt.plot(x,y)
-# plt.title("Linjediagram")
-# plt.xlabel("X-axeln")
-# plt.ylabel("Y-axeln")
-
-
-# Testa o rita en enkel graf 2:
-# x = ["A","B","C"]
-# y = [10,20,15]
-# plt.bar(x,y)
-# plt.title("Stapeldiagram")
-# plt.xlabel("X-axeln")
-# plt.ylabel("Y-axeln")
-# plt.show()
-
-# print(data_with_cat)
-
-# Det här funkar inte, för att groupby genererar en SERIES där index är Date
-# dates = data_with_cat.groupby("Date")["Sales"].sum()["Date"]
-
-# # Så vi måste antingen, hämta dates med unique()
-# dates = data_with_cat["Date"].unique()
-
 # # Eller hämta indexet som är date:
 datesAndSales = data_with_cat.groupby("Date")["Sales"].sum()
-# sales_per_date = data_with_cat.groupby("Date")["Sales"].sum()
-
-# x = datesAndSales.index
-# y = datesAndSales.values
-
-# print(x)
-# print(y)
-
-# print(datesAndSales)
-
-# plt.plot(datesAndSales)
-# plt.title("linje")
-# plt.xlabel("Datum")
-# plt.ylabel("Försäljning")
-# plt.show()
-
-# Testa lägga in fler rader
-# banan melon kiwi och citron
 
 # Skapa nya rader
 new_row1 = {
@@ -118,13 +71,16 @@ data_with_cat["Sales"] = data_with_cat["Price"] * data_with_cat["Quantity"]
 # y = data_with_cat.groupby("Date")["Sales"].sum()
 
 # Eller kortare:
-xANDy = data_with_cat.groupby("Date")["Sales"].sum()
+xANDy = data_with_cat.groupby("Product")["Quantity"].sum()
 
 print(xANDy)
 
+# Spara som en kalkylerad csv fil
+# data_with_cat.to_csv("data_with_cat.csv")
+
 # Rita grafen
-plt.plot(xANDy)
-plt.title("linje")
-plt.xlabel("Datum")
-plt.ylabel("Försäljning")
+plt.bar(xANDy.index, xANDy.values)
+plt.title("Stapeldiagram")
+plt.xlabel("Frukt")
+plt.ylabel("Antal")
 plt.show()

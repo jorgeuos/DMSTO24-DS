@@ -13,3 +13,6 @@ inlamnat/*
 *.xlsx
 
 ovningar/*
+
+Data-Visualization/Codes/*.temp
+
