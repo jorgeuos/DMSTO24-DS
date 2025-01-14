@@ -10,7 +10,9 @@ print(dataFrame)
 xY = dataFrame.groupby("Product").sum("Sales")
 print(xY)
 
-plt.bar(xY.index, xY.get("Sales"))
-plt.title("Stapeldiagram av Frukter och Total försäljning")
-plt.title()
+plt.bar(xY.index, xY.get("Sales"), label = 'En Label')
+plt.title("Stapeldiagram av Frukter och Total försäljning", loc="right")
+
+plt.legend(loc='lower center')
+
 plt.show()
