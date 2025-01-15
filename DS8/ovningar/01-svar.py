@@ -13,7 +13,7 @@ plt.bar(grouped_data.index, grouped_data["Sales"])
 plt.title("Total försäljning per produkt")
 plt.xlabel("Produkt")
 plt.ylabel("Försäljning")
-plt.show()
+# plt.show()
 
 # Gruppera och summera försäljning över tid
 time_series = dataFrame.groupby("Date").sum("Sales")
@@ -21,5 +21,6 @@ plt.plot(time_series.index, time_series["Sales"])
 plt.title("Försäljning över tid")
 plt.xlabel("Datum")
 plt.ylabel("Försäljning")
+plt.xticks(rotation=45)
 plt.show()
 

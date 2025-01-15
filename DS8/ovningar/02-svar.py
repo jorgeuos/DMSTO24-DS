@@ -13,4 +13,13 @@ top_products = dataFrame[dataFrame["Total_Sales"] > 500]
 print(top_products)
 
 # Spara till en ny CSV-fil
-top_products.to_csv("top_products.csv", index=False)
+# top_products.to_csv("top_products.csv", index=False)
+
+# Skapa ett stapeldiagram
+plt.bar(top_products["Product"], top_products["Total_Sales"])
+
+plt.title("Produkter med hög försäljning")
+plt.xlabel("Produkt")
+plt.ylabel("Total försäljning")
+plt.xticks(rotation=45)
+plt.show()
