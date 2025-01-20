@@ -1,11 +1,5 @@
 from textblob import TextBlob
 
-svTexts = [
-   "Den här produkten är fantastisk!",
-   "Jag är missnöjd med servicen.",
-   "Helt okej upplevelse, inte mer."
-]
-
 enTexts = [
     "This product is amazing!",
     "I am dissatisfied with the service.",
