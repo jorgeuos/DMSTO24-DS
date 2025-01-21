@@ -47,22 +47,22 @@ df = pd.read_csv(csv_file_path)
 
 print(df.head())
 
-# # Iterera genom DataFrame och lägg till data i tabellen
-# for index, row in df.iterrows():
-#     insert_query = """
-#     INSERT INTO sales (date, product, price, quantity, sales)
-#     VALUES (%s, %s, %s, %s, %s)
-#     """
-#     cursor.execute(insert_query, (row['Date'], row['Product'], row['Price'], row['Quantity'], row['Sales']))
+# Iterera genom DataFrame och lägg till data i tabellen
+for index, row in df.iterrows():
+    insert_query = """
+    INSERT INTO sales (date, product, price, quantity)
+    VALUES (%s, %s, %s, %s)
+    """
+    cursor.execute(insert_query, (row['Date'], row['Product'], row['Price'], row['Quantity']))
 
-# # Spara ändringar i databasen
-# conn.commit()
+# Spara ändringar i databasen
+conn.commit()
 
-# # Stäng anslutningen
-# cursor.close()
-# conn.close()
+# Stäng anslutningen
+cursor.close()
+conn.close()
 
-# print("CSV-filen har importerats till PostgreSQL!")
+print("CSV-filen har importerats till PostgreSQL!")
 
 
 
