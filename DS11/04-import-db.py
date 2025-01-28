@@ -47,6 +47,10 @@ df = pd.read_csv(csv_file_path)
 
 print(df.head())
 
+df['sales'] = df['price'] * df['quantity']
+
+df.isna().sum()
+
 # Iterera genom DataFrame och lägg till data i tabellen
 for index, row in df.iterrows():
     insert_query = """
