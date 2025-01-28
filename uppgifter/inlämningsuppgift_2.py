@@ -18,13 +18,13 @@ df = pd.read_csv(url)
 print(df.head())
 
 # sparar dataframen till en csv fil
-df.to_csv('/Users/viktorheidmark/Documents/DMSTO24-DS/ovningar/inlämningsuppgift_2.csv', index=False)
+df.to_csv('/Users/viktorheidmark/Documents/DMSTO24-DS/uppgifter/inlämningsuppgift_2.csv', index=False)
 
 #spara dataframen till en csv fil och skriver ut det i terminalen
 print("Data sparad i inlämningsuppgift_2.csv")
 
 # laddar ned data
-df = pd.read_csv('/Users/viktorheidmark/Documents/DMSTO24-DS/ovningar/inlämningsuppgift_2.csv')
+df = pd.read_csv('/Users/viktorheidmark/Documents/DMSTO24-DS/uppgifter/inlämningsuppgift_2.csv')
 
 # visar de första 5 raderna i dataframen
 print(df.head())
@@ -37,7 +37,7 @@ df['total'] = df['women'] + df['men']
 df['women_percentage'] = round((df['women'] / df['total']) * 100, 1)
 df['men_percentage'] = round((df['men'] / df['total']) * 100, 1)
 
-df.to_csv('/Users/viktorheidmark/Documents/DMSTO24-DS/ovningar/inlämningsuppgift_2.csv', index=False)
+df.to_csv('/Users/viktorheidmark/Documents/DMSTO24-DS/uppgifter/inlämningsuppgift_2.csv', index=False)
 
 
 # Filtrera datan för att fokusera på relevanta insikter.
@@ -61,7 +61,7 @@ print(summary)
 
 
 # Exportera den bearbetade datan till en Excel-fil med to excel().
-summary.to_excel('/Users/viktorheidmark/Documents/DMSTO24-DS/ovningar/processed_data.xlsx', index=True, sheet_name='processed_data.xlsx')
+summary.to_excel('/Users/viktorheidmark/Documents/DMSTO24-DS/uppgifter/processed_data.xlsx', index=True, sheet_name='processed_data.xlsx')
 
 print("Processed data has been saved to processed_data.xlsx")
 
