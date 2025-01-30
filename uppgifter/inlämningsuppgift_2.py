@@ -113,9 +113,29 @@ for i in range(0, df.shape[0]):
 plt.show()
 
 
+# Pie chart för fördelning av arbetslöshet mellan kvinnor och män
+total_women = df['women'].sum()
+total_men = df['men'].sum()
+
+labels = ['Kvinnor', 'Män']
+sizes = [total_women, total_men]
+colors = ['#ff9999','#66b3ff']
+explode = (0.1, 0) 
+
+plt.figure(figsize=(8, 8))
+plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%',
+        shadow=True, startangle=140)
+plt.title('Fördelning av arbetslöshet mellan kvinnor och män')
+plt.axis('equal')  
+plt.show()
+
+
+
+
 print("Histogram visar hur datan är fördelad.")
 print("Linjediagram visar trender över tid")
 print("Scatter plot visar relationer mellan två variabler med årtal på varje punkt")
+print("Pie chart visar fördelning av arbetslöshet mellan kvinnor")
 
 
 
