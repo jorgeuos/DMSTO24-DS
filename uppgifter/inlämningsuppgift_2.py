@@ -11,8 +11,16 @@ import seaborn as sns
 # Hämta ett dataset från dataportal.se. Exempel: befolkningsstatistik, trafikdata,
 # energiförbrukning.
 # Importera datan till Python med hjälp av pandas.read csv() eller motsvarande metod.
+# Ladda dataset (Obs: URL måste peka på en giltig CSV-fil!)
 url = 'https://catalog.iaf.se/store/1/resource/186'
-df = pd.read_csv(url)
+
+#sök efter fil om den inte finns så rapportera ett fel i terminalen
+try:
+    df = pd.read_csv(url)
+    print("Data har laddats!")
+except Exception as e:
+    print(f"Fel vid inläsning av data: {e}")
+    exit()
 
 # visa de första 5 raderna i dataframen
 print(df.head())
@@ -37,6 +45,7 @@ df['total'] = df['women'] + df['men']
 df['women_percentage'] = round((df['women'] / df['total']) * 100, 1)
 df['men_percentage'] = round((df['men'] / df['total']) * 100, 1)
 
+# spara nya kolumner i dataframen
 df.to_csv('/Users/viktorheidmark/Documents/DMSTO24-DS/uppgifter/inlämningsuppgift_2.csv', index=False)
 
 
@@ -63,7 +72,10 @@ print(summary)
 # Exportera den bearbetade datan till en Excel-fil med to excel().
 summary.to_excel('/Users/viktorheidmark/Documents/DMSTO24-DS/uppgifter/processed_data.xlsx', index=True, sheet_name='processed_data.xlsx')
 
+# skriver ut att datan har sparats i terminalen
 print("Processed data has been saved to processed_data.xlsx")
+
+
 
 
 # Histogram för datafördelning för att visa hur datan är fördelad.
@@ -80,7 +92,7 @@ sns.lineplot(data=df, x='year', y='total', label='Total')
 sns.lineplot(data=df, x='year', y='women', label='Women')
 sns.lineplot(data=df, x='year', y='men', label='Men')
 plt.title('Linjediagram för att visa trender över tid')
-plt.xlabel('År')
+plt.xlabel('År') 
 plt.ylabel('Befolkning')
 plt.legend()
 plt.show()
@@ -104,3 +116,7 @@ plt.show()
 print("Histogram visar hur datan är fördelad.")
 print("Linjediagram visar trender över tid")
 print("Scatter plot visar relationer mellan två variabler med årtal på varje punkt")
+
+
+
+
